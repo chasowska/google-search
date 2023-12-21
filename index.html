@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google search</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .header-link {
+          @apply flex;
+        }
+
+        .header-link li {
+          @apply hover:bg-blue-600/25 transition text-white/25 hover:text-white;
+        }
+
+        .header-link li a {
+          @apply py-6 px-4 block;
+        }
+
+        .header-link .active {
+          @apply bg-blue-600/25 text-white border-b border-b-[#1f6ad5] border-b-4 -mb-0.5;
+        }
+      }
+    </style>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+<div>
+    <header class="w-full bg-blue-500 text-white px-10">
+        <div class="flex gap-3 items-center">
+            <div class="w-64">
+                <img class="w-28 mx-auto" src="./png/google-white-logo.png" alt="Google logo">
+            </div>
+            <nav class="flex-grow">
+                <ul class="header-link border-b border-b-white/25 w-fit border-b-2">
+                    <li><a class="active" href="">Search</a></li>
+                    <li><a href="">Videos</a></li>
+                    <li><a href="">Images</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Gmail</a></li>
+                    <li><a href="">Calendar</a></li>
+                    <li><a href="">Translate</a></li>
+                    <li><a href="">Drive</a></li>
+                </ul>
+            </nav>
+            <div class="w-64 flex items-center justify-around">
+                <button>
+                    <iconify-icon icon="ic:round-menu"
+                                  class="text-3xl text-black/25 transition hover:text-white"></iconify-icon>
+                </button>
+                <button>
+                    <iconify-icon icon="mdi:bell-outline"
+                                  class="text-3xl text-black/25 transition hover:text-white"></iconify-icon>
+                </button>
+                <button class="transition hover:ring hover:ring-8 ring-blue-600/25 rounded-full w-10 h-10 overflow-hidden">
+                    <img src="https://picsum.photos/200/200" alt="User's photo">
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="p-10 flex gap-3 bg-blue-500 text-white">
+        <div class="w-64 shrink-0"></div>
+        <div class="flex gap-x-8">
+            <button class="flex items-center justify-center bg-[#1f6ad5] rounded-full w-10 h-10 transition hover:ring hover:ring-8 ring-blue-600/25">
+                <iconify-icon class="text-xl" icon="ic:baseline-mic"></iconify-icon>
+            </button>
+            <button class="flex items-center justify-center bg-[#1f6ad5] rounded-full w-10 h-10 transition hover:ring hover:ring-8 ring-blue-600/25">
+                <iconify-icon class="text-xl" icon="ion:camera"></iconify-icon>
+            </button>
+            <div class="flex items-center">
+                <iconify-icon
+                        icon="material-symbols-light:search"
+                        class="text-blue-200 mr-3 text-3xl"></iconify-icon>
+                <label class="sr-only" for="search">Search</label>
+                <input class="placeholder:text-blue-200 h-10 text-3xl bg-transparent font-light focus-visible:outline-none"
+                       type="search"
+                       id="search"
+                       placeholder="Search">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
